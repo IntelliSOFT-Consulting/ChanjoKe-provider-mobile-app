@@ -50,15 +50,17 @@ class FormatterClass {
         return try {
             val dateFormat = SimpleDateFormat(format, Locale.getDefault())
             dateFormat.parse(dateString) ?: Date()
-        }catch (e:Exception){
+        } catch (e: Exception) {
             null
         }
 
     }
+
     fun convertDateToLocalDate(date: Date): LocalDate {
         val instant = date.toInstant()
         return instant.atZone(java.time.ZoneId.systemDefault()).toLocalDate()
     }
+
     fun removeNonNumeric(input: String): String {
         // Regex pattern to match numeric values (with optional decimal part)
         val numericPattern = Regex("[0-9]+(\\.[0-9]+)?")
@@ -69,6 +71,7 @@ class FormatterClass {
         // Extract the numeric value or return an empty string if not found
         return matchResult?.value ?: ""
     }
+
     fun convertDateFormat(inputDate: String): String? {
         // Define the input date formats to check
         val inputDateFormats = arrayOf(
@@ -87,7 +90,6 @@ class FormatterClass {
 
             // Add more formats as needed
         )
-
 
 
         // Try parsing the input date with each format
@@ -131,13 +133,14 @@ class FormatterClass {
 
             var seriesDoses = ""
 
-            seriesDoses = when(vaccineDetails){
+            seriesDoses = when (vaccineDetails) {
                 is RoutineVaccine -> {
                     "${vaccineDetails.seriesDoses}"
                 }
 
                 is NonRoutineVaccine -> {
-                    val nonRoutineVaccine = vaccineDetails.vaccineList.firstOrNull(){it.targetDisease == targetDisease}
+                    val nonRoutineVaccine =
+                        vaccineDetails.vaccineList.firstOrNull() { it.targetDisease == targetDisease }
                     "${nonRoutineVaccine?.seriesDoses}"
                 }
 
@@ -178,8 +181,8 @@ class FormatterClass {
             )
 
             //Save to shared pref
-            stockList.forEach{
-                saveSharedPref(it.name,it.value,context)
+            stockList.forEach {
+                saveSharedPref(it.name, it.value, context)
             }
 
         }
@@ -193,7 +196,6 @@ class FormatterClass {
         val result = words.joinToString(" ") { it.capitalize() }
         return result
     }
-
 
 
     fun getFormattedAge(
@@ -265,6 +267,7 @@ class FormatterClass {
             .map { chars[Random.nextInt(chars.length)] }
             .joinToString("")
     }
+
     fun calculateWeeksFromDate(dateString: String): Int? {
         val currentDate = LocalDate.now()
         val givenDate = LocalDate.parse(dateString)
@@ -286,6 +289,58 @@ class FormatterClass {
 
         // Get the new date after adding weeks
         return calendar.time
+    }
+
+    fun generateSubCounties(): List<String> {
+        return listOf(
+            "PR-address-sub-county-mombasa",
+            "PR-address-sub-county-kwale",
+            "PR-address-sub-county-kilifi",
+            "PR-address-sub-county-tana-river",
+            "PR-address-sub-county-lamu",
+            "PR-address-sub-county-taita-taveta",
+            "PR-address-sub-county-garissa",
+            "PR-address-sub-county-wajir",
+            "PR-address-sub-county-mandera",
+            "PR-address-sub-county-marsabit",
+            "PR-address-sub-county-isolo",
+            "PR-address-sub-county-meru",
+            "PR-address-sub-county-tharaka-nithi",
+            "PR-address-sub-county-embu",
+            "PR-address-sub-county-kitui",
+            "PR-address-sub-county-machakos",
+            "PR-address-sub-county-makueni",
+            "PR-address-sub-county-nyandarua",
+            "PR-address-sub-county-nyeri",
+            "PR-address-sub-county-kirinyaga",
+            "PR-address-sub-county-murang'a",
+            "PR-address-sub-county-kiambu",
+            "PR-address-sub-county-turkana",
+            "PR-address-sub-county-west-pokot",
+            "PR-address-sub-county-samburu",
+            "PR-address-sub-county-trans-nzoia",
+            "PR-address-sub-county-uasin-gishu",
+            "PR-address-sub-county-elgeyo-marakwet",
+            "PR-address-sub-county-nandi",
+            "PR-address-sub-county-baringo",
+            "PR-address-sub-county-laikipia",
+            "PR-address-sub-county-nakuru",
+            "PR-address-sub-county-narok",
+            "PR-address-sub-county-kajiado",
+            "PR-address-sub-county-kericho",
+            "PR-address-sub-county-bomet",
+            "PR-address-sub-county-kakamega",
+            "PR-address-sub-county-vihiga",
+            "PR-address-sub-county-bungoma",
+            "PR-address-sub-county-busia",
+            "PR-address-sub-county-siaya",
+            "PR-address-sub-county-kisumu",
+            "PR-address-sub-county-homa-bay",
+            "PR-address-sub-county-migori",
+            "PR-address-sub-county-kisii",
+            "PR-address-sub-county-nyamira",
+            "PR-address-sub-county-nairobi"
+        )
     }
 
 

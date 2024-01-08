@@ -15,896 +15,9 @@
         "expression": "Patient",
         "name": "patient"
       }
-    },
-    {
-      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "system": "http://hl7.org/fhir/questionnaire-item-control",
-            "code": "page",
-            "display": "Page"
-          }
-        ],
-        "text": "Page"
-      }
     }
   ],
   "item": [
-    {
-      "text": "",
-      "type": "group",
-      "linkId": "1.0.0",
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                "code": "page",
-                "display": "Page"
-              }
-            ],
-            "text": "Page"
-          }
-        }
-      ],
-      "item": [
-        {
-          "linkId": "PR",
-          "type": "group",
-          "text": "Client Details",
-          "_text": {
-            "extension": [
-              {
-                "extension": [
-                  {
-                    "url": "lang",
-                    "valueCode": "sw"
-                  },
-                  {
-                    "url": "content",
-                    "valueString": "Maelezo ya mteja"
-                  }
-                ],
-                "url": "http://hl7.org/fhir/StructureDefinition/translation"
-              }
-            ]
-          },
-          "item": [
-            {
-              "linkId": "PR-name",
-              "type": "group",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name",
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "Patient.name.given",
-                        "name": "patientName"
-                      }
-                    }
-                  ],
-                  "linkId": "PR-name-text",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.given",
-                  "type": "string",
-                  "required": true,
-                  "item": [
-                    {
-                      "linkId": "firstname",
-                      "text": "First Name *",
-                      "type": "display",
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ],
-                            "text": "Flyover"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "Patient.name.given",
-                        "name": "patientName"
-                      }
-                    }
-                  ],
-                  "linkId": "PR-name-middle",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.name.given",
-                  "type": "string",
-                  "item": [
-                    {
-                      "linkId": "middle-name",
-                      "text": "Middle Name",
-                      "type": "display",
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ],
-                            "text": "Flyover"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "Patient.name.family",
-                        "name": "patientFamily"
-                      }
-                    }
-                  ],
-                  "linkId": "PR-name-family",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/datatypes#HumanName.family",
-                  "type": "string",
-                  "required": true,
-                  "item": [
-                    {
-                      "linkId": "last-name",
-                      "text": "Last Name *",
-                      "type": "display",
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ],
-                            "text": "Flyover"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "Patient.birthDate",
-                    "name": "patientBirthDate"
-                  }
-                },
-                {
-                  "url": "http://ehelse.no/fhir/StructureDefinition/validationtext",
-                  "valueString": "Cannot be a date in the future"
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/minValue",
-                  "valueDate": {
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-calculatedValue",
-                        "valueExpression": {
-                          "language": "text/fhirpath",
-                          "expression": "today() - 26000 days"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/maxValue",
-                  "valueDate": {
-                    "extension": [
-                      {
-                        "url": "http://hl7.org/fhir/StructureDefinition/cqf-calculatedValue",
-                        "valueExpression": {
-                          "language": "text/fhirpath",
-                          "expression": "today()"
-                        }
-                      }
-                    ]
-                  }
-                }
-              ],
-              "linkId": "patient-0-birth-date",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.birthDate",
-              "type": "date",
-              "required": true,
-              "text": "Date of Birth *"
-            },
-            {
-              "linkId": "patient-0-gender",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.gender",
-              "type": "choice",
-              "text": "Sex *",
-              "required": true,
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "system": "http://hl7.org/fhir/administrative-gender",
-                    "language": "text/fhirpath",
-                    "expression": "Patient.gender",
-                    "name": "patientGender"
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                  "valueCode": "horizontal"
-                }
-              ],
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/administrative-gender",
-                    "code": "female",
-                    "display": "Female",
-                    "designation": [
-                      {
-                        "language": "sw",
-                        "value": "Mwanamke"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/administrative-gender",
-                    "code": "male",
-                    "display": "Male",
-                    "designation": [
-                      {
-                        "language": "sw",
-                        "value": "Mwanaume"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/administrative-gender",
-                    "code": "other",
-                    "display": "Other",
-                    "designation": [
-                      {
-                        "language": "sw",
-                        "value": "Nyingine"
-                      }
-                    ]
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "PR-telecom",
-              "type": "group",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.telecom",
-              "item": [
-                {
-                  "linkId": "PR-telecom-system",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.telecom.system",
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                      "valueBoolean": true
-                    }
-                  ],
-                  "type": "string",
-                  "text": "system",
-                  "initial": [
-                    {
-                      "valueString": "phone"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "Patient.telecom.value",
-                        "name": "patientTelecom"
-                      }
-                    }
-                  ],
-                  "linkId": "PR-telecom-value",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.telecom.value",
-                  "type": "string",
-                  "item": [
-                    {
-                      "linkId": "phone-number",
-                      "text": "Phone Number",
-                      "type": "display",
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ],
-                            "text": "Flyover"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "linkId": "PR-identify",
-              "type": "group",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.identifier",
-              "item": [
-                {
-                  "linkId": "patient-identify-type",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.identifier.type",
-                  "type": "choice",
-                  "text": "",
-                  "item": [
-                    {
-                      "linkId": "identification-type",
-                      "text": "Identification Type *",
-                      "type": "display",
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ],
-                            "text": "Flyover"
-                          }
-                        }
-                      ]
-                    }
-                  ],
-                  "required": true,
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "system": "http://hl7.org/fhir/administrative-identifier",
-                        "language": "text/fhirpath",
-                        "expression": "Patient.identifier.type",
-                        "name": "patientIdentifier"
-                      }
-                    },
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "drop-down",
-                            "display": "Drop Down"
-                          }
-                        ]
-                      }
-                    }
-                  ],
-                  "answerOption": [
-                    {
-                      "valueCoding": {
-                        "system": "http://hl7.org/fhir/administrative-identifier",
-                        "code": "birthcertificate",
-                        "display": "Birth Certificate"
-                      }
-                    },
-                    {
-                      "valueCoding": {
-                        "system": "http://hl7.org/fhir/administrative-identifier",
-                        "code": "nationalId",
-                        "display": "National ID"
-                      }
-                    },
-                    {
-                      "valueCoding": {
-                        "system": "http://hl7.org/fhir/administrative-identifier",
-                        "code": "passport",
-                        "display": "Passport"
-                      }
-                    },
-                    {
-                      "valueCoding": {
-                        "system": "http://hl7.org/fhir/administrative-identifier",
-                        "code": "nemis",
-                        "display": "NEMIS No"
-                      }
-                    },
-                    {
-                      "valueCoding": {
-                        "system": "http://hl7.org/fhir/administrative-identifier",
-                        "code": "bNo",
-                        "display": "Birth Notification Number"
-                      }
-                    }
-                  ]
-                },
-                {
-                  "linkId": "PR-identifier-system",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.identifier.system",
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                      "valueBoolean": true
-                    }
-                  ],
-                  "type": "string",
-                  "text": "system",
-                  "initial": [
-                    {
-                      "valueString": "identification"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "Patient.identifier.value",
-                        "name": "patientIdentification"
-                      }
-                    }
-                  ],
-                  "linkId": "PR-telecom-value",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.identifier.value",
-                  "type": "string",
-                  "required": true,
-                  "item": [
-                    {
-                      "linkId": "identification-number",
-                      "text": "Identification Number *",
-                      "type": "display",
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ],
-                            "text": "Flyover"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "text": "Caregivers",
-      "linkId": "PR-caregivers",
-      "type": "group",
-      "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact",
-      "item": [
-        {
-          "linkId": "patient-rshp",
-          "type": "choice",
-          "item": [
-            {
-              "linkId": "caregiver-type",
-              "text": "Caregiver Type ",
-              "type": "display",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "flyover",
-                        "display": "Fly-over"
-                      }
-                    ],
-                    "text": "Flyover"
-                  }
-                }
-              ]
-            }
-          ],
-          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.relationship",
-          "extension": [
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-              "valueCodeableConcept": {
-                "coding": [
-                  {
-                    "system": "http://hl7.org/fhir/questionnaire-item-control",
-                    "code": "drop-down",
-                    "display": "Drop Down"
-                  }
-                ]
-              }
-            },
-            {
-              "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-              "valueCode": "horizontal"
-            },
-            {
-              "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-              "valueExpression": {
-                "language": "text/fhirpath",
-                "expression": "Patient.contact.relationship",
-                "name": "patientRelationship"
-              }
-            }
-          ],
-          "answerOption": [
-            {
-              "valueCoding": {
-                "system": "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
-                "code": "fatherId",
-                "display": "Father"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
-                "code": "motherId",
-                "display": "Mother"
-              }
-            },
-            {
-              "valueCoding": {
-                "system": "http://hl7.org/fhir/administrative-gender",
-                "code": "guardianId",
-                "display": "Guardian"
-              }
-            }
-          ]
-        },
-        {
-          "linkId": "patient-contact-name",
-          "type": "group",
-          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.name",
-          "item": [
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "Patient.contact.name.given",
-                    "name": "patientContactName"
-                  }
-                }
-              ],
-              "linkId": "PR-name-text",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.name.given",
-              "type": "string",
-              "required": true,
-              "item": [
-                {
-                  "linkId": "caregiver-name",
-                  "text": "Care Giver Name *",
-                  "type": "display",
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ],
-                        "text": "Flyover"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId": "patient-relationship-telecom",
-          "type": "group",
-          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.telecom",
-          "item": [
-            {
-              "linkId": "patient-contact-telecom-system",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.telecom.system",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                  "valueBoolean": true
-                }
-              ],
-              "type": "string",
-              "text": "system",
-              "initial": [
-                {
-                  "valueString": "phone"
-                }
-              ]
-            },
-            {
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "Patient.contact.telecom.value",
-                    "name": "patientContactTelecom"
-                  }
-                }
-              ],
-              "linkId": "patient-contact-telecom-value",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.telecom.value",
-              "type": "string",
-              "item": [
-                {
-                  "linkId": "care-give-number",
-                  "text": "Phone Number",
-                  "type": "display",
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ],
-                        "text": "Flyover"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "linkId": "PR-caregivers1",
-          "type": "group",
-          "repeats": true,
-          "item": [
-            {
-              "text": "Care Giver",
-              "type": "display",
-              "linkId": "care-giver-list"
-            },
-            {
-              "linkId": "patient-rshp-1",
-              "type": "choice",
-              "item": [
-                {
-                  "linkId": "care-giver-type",
-                  "text": "Caregiver Type",
-                  "type": "display",
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                      "valueCodeableConcept": {
-                        "coding": [
-                          {
-                            "system": "http://hl7.org/fhir/questionnaire-item-control",
-                            "code": "flyover",
-                            "display": "Fly-over"
-                          }
-                        ],
-                        "text": "Flyover"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.relationship",
-              "extension": [
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                  "valueCodeableConcept": {
-                    "coding": [
-                      {
-                        "system": "http://hl7.org/fhir/questionnaire-item-control",
-                        "code": "drop-down",
-                        "display": "Drop Down"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-choiceOrientation",
-                  "valueCode": "horizontal"
-                },
-                {
-                  "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                  "valueExpression": {
-                    "language": "text/fhirpath",
-                    "expression": "Patient.contact.relationship",
-                    "name": "patientRelationship"
-                  }
-                }
-              ],
-              "answerOption": [
-                {
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
-                    "code": "fatherId",
-                    "display": "Father"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/ValueSet/patient-contactrelationship",
-                    "code": "motherId",
-                    "display": "Mother"
-                  }
-                },
-                {
-                  "valueCoding": {
-                    "system": "http://hl7.org/fhir/administrative-gender",
-                    "code": "guardianId",
-                    "display": "Guardian"
-                  }
-                }
-              ]
-            },
-            {
-              "linkId": "patient-contact-name-1",
-              "type": "group",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.name",
-              "item": [
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "Patient.contact.name.given",
-                        "name": "patientContactName"
-                      }
-                    }
-                  ],
-                  "linkId": "PR-name-text-1",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.name.given",
-                  "type": "string",
-                  "required": true,
-                  "item": [
-                    {
-                      "linkId": "care-giver-name",
-                      "text": "Care Giver Name *",
-                      "type": "display",
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ],
-                            "text": "Flyover"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "linkId": "patient-relationship-telecom-1",
-              "type": "group",
-              "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.telecom",
-              "item": [
-                {
-                  "linkId": "patient-contact-telecom-system",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.telecom.system",
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-hidden",
-                      "valueBoolean": true
-                    }
-                  ],
-                  "type": "string",
-                  "text": "system",
-                  "initial": [
-                    {
-                      "valueString": "phone"
-                    }
-                  ]
-                },
-                {
-                  "extension": [
-                    {
-                      "url": "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-initialExpression",
-                      "valueExpression": {
-                        "language": "text/fhirpath",
-                        "expression": "Patient.contact.telecom.value",
-                        "name": "patientContactTelecom"
-                      }
-                    }
-                  ],
-                  "linkId": "patient-contact-telecom-value-1",
-                  "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.contact.telecom.value",
-                  "type": "string",
-                  "item": [
-                    {
-                      "linkId": "care-giver-phone",
-                      "text": "Phone Number *",
-                      "type": "display",
-                      "extension": [
-                        {
-                          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
-                          "valueCodeableConcept": {
-                            "coding": [
-                              {
-                                "system": "http://hl7.org/fhir/questionnaire-item-control",
-                                "code": "flyover",
-                                "display": "Fly-over"
-                              }
-                            ],
-                            "text": "Flyover"
-                          }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
     {
       "text": "Administrative area",
       "linkId": "PR-address",
@@ -960,6 +73,7 @@
               ]
             }
           ],
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.address.city",
           "answerOption": [
             {
               "valueCoding": {
@@ -1331,6 +445,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -1437,6 +552,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -1529,6 +645,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -1642,6 +759,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -1727,6 +845,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -1805,6 +924,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -1897,6 +1017,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -2003,6 +1124,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -2109,6 +1231,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -2215,6 +1338,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -2307,6 +1431,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -2385,6 +1510,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -2512,6 +1638,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -2597,6 +1724,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -2689,6 +1817,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -2809,6 +1938,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -2929,6 +2059,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -3035,6 +2166,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -3134,6 +2266,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -3240,6 +2373,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -3332,6 +2466,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -3445,6 +2580,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -3593,6 +2729,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -3699,6 +2836,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -3791,6 +2929,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -3876,6 +3015,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -3975,6 +3115,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -4081,6 +3222,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -4173,6 +3315,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -4279,6 +3422,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -4385,6 +3529,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -4470,6 +3615,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -4611,6 +3757,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -4717,6 +3864,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -4816,6 +3964,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -4922,6 +4071,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -5021,6 +4171,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -5169,6 +4320,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -5268,6 +4420,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -5395,6 +4548,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -5508,6 +4662,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -5614,6 +4769,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -5727,6 +4883,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -5847,6 +5004,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -5967,6 +5125,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -6094,6 +5253,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -6186,6 +5346,7 @@
           "type": "choice",
           "required": true,
           "text": "Sub County *",
+          "definition": "http://hl7.org/fhir/StructureDefinition/Patient#Patient.district",
           "item": [
             {
               "linkId": "sub-county",
@@ -6355,7 +5516,7 @@
             }
           ],
           "linkId": "PR-address-ward",
-          "type": "choice",
+          "type": "string",
           "item": [
             {
               "linkId": "ward",
