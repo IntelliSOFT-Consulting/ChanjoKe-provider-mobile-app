@@ -811,7 +811,7 @@ class AddPatientViewModel(application: Application, private val state: SavedStat
                 count = 1000
                 from = 0
             }
-            .mapIndexed { index, fhirPatient -> fhirPatient.resource.toPatientItem(index + 1) }
+            .mapIndexed { index, fhirPatient -> fhirPatient.toPatientItem(index + 1) }
             .let {
                 it.forEach { q ->
 

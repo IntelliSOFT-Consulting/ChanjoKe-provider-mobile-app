@@ -409,7 +409,7 @@ class AdministerVaccineViewModel(
 //                        })
                         sort(Encounter.DATE, Order.DESCENDING)
                     }
-                    .map { getRecommendationData(it.resource) }
+                    .map { getRecommendationData(it) }
                     .let { immunizationRecommendationList.addAll(it)}
 
                 /**
@@ -1363,7 +1363,7 @@ class AdministerVaccineViewModel(
                 filter(Observation.ENCOUNTER, { value = "Encounter/$encounterId" })
             }
             .take(1)
-            .map { createObservationItem(it.resource, getApplication<Application>().resources) }
+            .map { createObservationItem(it, getApplication<Application>().resources) }
             .let { observations.addAll(it) }
 
         //Return limited results
@@ -1531,7 +1531,7 @@ class AdministerVaccineViewModel(
 //                        })
                 sort(Encounter.DATE, Order.DESCENDING)
             }
-            .map { getRecommendationData(it.resource) }
+            .map { getRecommendationData(it) }
             .let { immunizationRecommendationList.addAll(it)}
 
         /**

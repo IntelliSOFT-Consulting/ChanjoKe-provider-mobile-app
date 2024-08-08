@@ -27,7 +27,7 @@ abstract class ValueSetResolver : ExternalAnswerValueSetResolver {
             else {
                 val valueSetList = ArrayList<Coding>()
                 for (valueSet in valueSets) {
-                    for (item in valueSet.resource.expansion.contains) {
+                    for (item in valueSet.expansion.contains) {
                         valueSetList.add(
                             Coding().apply {
                                 system = item.system

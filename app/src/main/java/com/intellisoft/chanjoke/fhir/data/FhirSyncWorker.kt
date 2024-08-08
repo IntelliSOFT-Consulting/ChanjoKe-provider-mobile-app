@@ -6,7 +6,6 @@ import com.intellisoft.chanjoke.fhir.FhirApplication
 import com.google.android.fhir.sync.AcceptLocalConflictResolver
 import com.google.android.fhir.sync.DownloadWorkManager
 import com.google.android.fhir.sync.FhirSyncWorker
-import com.google.android.fhir.sync.upload.UploadStrategy
 
 class FhirSyncWorker(appContext: Context, workerParams: WorkerParameters) :
     FhirSyncWorker(appContext, workerParams) {
@@ -20,5 +19,5 @@ class FhirSyncWorker(appContext: Context, workerParams: WorkerParameters) :
 
     override fun getFhirEngine() = FhirApplication.fhirEngine(applicationContext)
 
-    override fun getUploadStrategy(): UploadStrategy = UploadStrategy.AllChangesSquashedBundlePut
+//    override fun getUploadStrategy(): UploadStrategy = UploadStrategy.AllChangesSquashedBundlePut
 }
